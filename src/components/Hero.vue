@@ -1,5 +1,6 @@
 <template>
-  <section class='hero' :class="'hero--' + ailmentName">
+  <section class='hero' :class="'hero--' + ailmentName" :style="{'background-image': 'url(' + require('../assets/header-' + Math.round(Math.random()*5) + '.jpg') + ')'
+}">
       <div class='hero__info'>
         <span class='hero__line hero__line-1'>
           Con tu donativo
@@ -40,6 +41,8 @@
 </template>
 
 <script>
+
+
 export default {
   name: 'Hero',
   props: {
@@ -50,6 +53,10 @@ export default {
     ailmentName: {
       type: String,
       default: 'autismo'
+    }
+  },
+  data (){
+    return{
     }
   }
 }

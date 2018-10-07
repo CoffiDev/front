@@ -1,9 +1,6 @@
 @import 'mixins'
 @import 'custom-properties'
 
-html, body, #app
-  height: 100%
-
 * 
   box-sizing: border-box
 
@@ -25,9 +22,19 @@ section
   font-weight: 800
   line-height: 1
   letter-spacing: -0.07em
+  &--medium
+    font-weight: normal
+    font-size: v(font-medium)
+
+.no-margin
+  margin: 0
 
 .lowercase 
   text-transform: lowercase
+.capitalize 
+  text-transform: lowercase
+  &:first-letter
+    text-transform: uppercase
 
 .site-header
   color: v(color-emphasis)
@@ -40,6 +47,9 @@ section
 
 .color-accent
   color: v(color-accent)
+.color-primary
+  color: v(color-primary)
+
 
 .logo 
   margin: 0
@@ -111,11 +121,25 @@ section
 .patient 
   display: inline-block
   &--complete 
-    fill: v(color-primary)
+    position: relative
+    fill: v(color-accent-2)
+    // fill: v(color-primary)
+    top: 0px
+    $delay: calc(var(--patient-index) * .04s + 1.5s) 
+    +animator(fade-color, (delay: $delay, duration: .5s))
+      0%
+        fill: v(color-accent-2)
+        top: 0px
+      50%
+        top: -20px
+      100%
+        top: -0px
+        fill: v(color-primary)
   &--pending 
     fill: v(color-accent-2)
   svg 
-    width: 26px
+    width: 30px
+    margin: 0 -2px
     height: 40px
     display: inline-block
 

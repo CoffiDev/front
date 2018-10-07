@@ -1,9 +1,8 @@
 <template>
-  <section class="text-center">
+  <section class="text-center color-primary">
     <p>
-      <strong class='text-emphasis'>{{patientName}}</strong>
-      <br/>
-      así como {{graduatedPatients}} niños con {{ailmentName}}
+      <p class='text-emphasis capitalize no-margin'>{{patientName}}</p>
+      así como {{graduatedPatients}} niños con <span class='lowercase'>{{ailmentName}}</span>
       <br/>
       <span class='text-emphasis text-emphasis--medium'>
         han <strong> mejorado su vida </strong> gracias a ti
@@ -73,8 +72,15 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-  .child
-    width: 200px
-    height: 200px
+  .patient-photo
+    width: 150px
+    height: 150px 
     border-radius: 50%
+    overflow: hidden
+    margin: auto
+  .child
+    min-width: 150px
+    min-height: 150px
+    height: auto
+    width: auto
 </style>
