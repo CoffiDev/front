@@ -14,7 +14,7 @@
           y niños
         </span>
         <span class='hero__line hero__line-5'>
-          con {{ailmentName}}
+          con <span class='lowercase'>{{ailmentName}}</span>
         </span>
         <span class='hero__line hero__line-6'>
           entre casi 16000<br/>

@@ -23,6 +23,9 @@ section
   line-height: 1
   letter-spacing: -0.07em
 
+.lowercase 
+  text-transform: lowercase
+
 .site-header
   color: v(color-emphasis)
   background-color: var(--color-secondary)
@@ -85,6 +88,18 @@ section
   color: v(color-primary)
   &__header 
 
+.patients-grid
+  margin-top: 1.5em
+.patient 
+  display: inline-block
+  &--complete 
+    fill: v(color-primary)
+  &--pending 
+    fill: v(color-accent-2)
+  svg 
+    width: 26px
+    height: 40px
+    display: inline-block
 
 
 .btn 

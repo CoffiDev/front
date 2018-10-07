@@ -2,7 +2,7 @@ export const PatientsContainer = (component) => {
   return {
     data() {
       return {
-        maxTokens: 24
+        maxTokens: 72
       }
     },
     computed: {
