@@ -72,8 +72,15 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-  .child
-    width: 200px
-    height: 200px
+  .patient-photo
+    width: 150px
+    height: 150px 
     border-radius: 50%
+    overflow: hidden
+    margin: auto
+  .child
+    min-width: 150px
+    min-height: 150px
+    height: auto
+    width: auto
 </style>
