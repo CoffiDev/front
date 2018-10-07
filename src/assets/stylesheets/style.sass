@@ -54,6 +54,13 @@ section
     height: 50px
     font-size: 14px
     position: relative
+    width: var(--progressPercent)
+    max-width: 1px
+    +animator('prog', (delay: .5s, duration: 4s))
+      0%
+        max-width: 1px
+      100%
+        max-width: 100vw
 
   &__progress-item
     position: absolute
@@ -62,6 +69,12 @@ section
     left: 100%
     white-space: nowrap
     line-height: 1
+    opacity: 0
+    +animator('fade-in', (delay: 1s, duration: 2s))
+      0%
+        opacity: 0
+      100%
+        opacity: 1
 
     &:nth-child(2)
       display: none

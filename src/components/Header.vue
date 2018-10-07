@@ -4,7 +4,7 @@
       <img src='@/assets/logo-teleton.svg' alt='Teletón 2018'>
     </h1>
     <div class='goal-bar'>
-      <div class='goal-bar__progress' :style="{'width': progressPercent + '%'}">
+      <div class='goal-bar__progress' :style="{'--progressPercent': progressPercent + '%'}">
         <p class='goal-bar__progress-item'>
           <small>Se han donado</small>
           <br/>
