@@ -12,7 +12,8 @@ export default new Vuex.Store({
       ailmentName: '',
       testimony: '',
       graduated: '',
-      achievements: ''
+      achievements: '',
+      totalGraduated: 0
     },
     crit: {
       centerName: '',

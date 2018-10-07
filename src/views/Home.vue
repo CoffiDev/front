@@ -16,10 +16,13 @@ import HelloWorld from '@/components/HelloWorld.vue'
 import Header from '@/components/Header.vue' 
 import Hero from '@/components/Hero.vue' 
 import Patients from '@/components/Patients.vue' 
-import SuccessCases from '@/components/SuccessCases.vue' 
+import SuccessCases from '@/components/SuccessCases.vue'
+
 import { PatientsContainer } from '@/containers/PatientsContainer'
 import { HeroContainer } from '@/containers/HeroContainer'
 import { HeaderContainer } from '@/containers/HeaderContainer'
+
+import { SuccessCaseContainer } from '@/containers/SuccessCaseContainer'
 
 export default {
   name: 'home',
@@ -31,7 +34,7 @@ export default {
     Header: HeaderContainer(Header),
     Hero: HeroContainer(Hero),
     Patients: PatientsContainer(Patients),
-    SuccessCases,
+    SuccessCases: SuccessCaseContainer(SuccessCases),
   }
 }
 </script>

@@ -3,7 +3,7 @@
     <p>
       <strong class='text-emphasis'>{{patientName}}</strong>
       <br/>
-      así como {{patients}} niños con {{ailmentName}}
+      así como {{graduatedPatients}} niños con {{ailmentName}}
       <br/>
       <span class='text-emphasis text-emphasis--medium'>
         han <strong> mejorado su vida </strong> gracias a ti
@@ -14,7 +14,7 @@
     </div>
     <p class='text-read text-read--small'>
       <small>
-        Andrés Aprendió a comportarse mejor,  ya espera turnos, empieza a solicitar las cosas, a vestirse solo,  así como a ir al baño solo. 
+        {{testimony}}
       </small>
     </p>
   </section>
@@ -28,15 +28,17 @@ export default {
       type: String,
       default: 'Andres'
     }, 
-    patients: {
+    graduatedPatients: {
       type: Number, 
       default: 55
     }, 
     ailmentName: {
       type: String,
       default: 'autismo'
+    },
+    testimony: {
+      type: String,
     }
-
   }
 }
 </script>
