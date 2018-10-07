@@ -38,6 +38,7 @@
       <a class='btn btn--action btn--hero' style="text-decoration: none" href="https://www.teleton.org/donar" target="_blank">
         Quiero donar
       </a>
+      <img class='yellow-topping' src='@/assets/yellow-topping.svg' aria-hidden='true'/>
     </div>
   </section>
 </template>
