@@ -111,3 +111,8 @@
   animation-timing-function: $timing-function
   animation-fill-mode: $fill-mode 
   animation-direction: $direction
+
+@mixin appearance($value: none)
+  -webkit-appearance: $value
+  -moz-appearance: $value
+  appearance: $value

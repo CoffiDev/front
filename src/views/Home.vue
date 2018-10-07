@@ -1,10 +1,10 @@
 <template>
   <div class="home">
     <Header 
-      progressDonation='$144,555,566'
-      progressChildren='100000'
-      goalDonation='$364,097,181'
-      goalChildren='100000' />
+      :progressDonation=144555566
+      :progressChildren=100000
+      :goalDonation=364097181
+      :goalChildren=100000 />
     <Hero/>
     <Patients/>
   </div>
