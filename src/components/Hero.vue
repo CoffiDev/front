@@ -2,7 +2,10 @@
   <section class='hero' :class="'hero--' + ailmentName" :style="{'background-image': 'url(' + require('../assets/header-' + (Math.round(Math.random() * 4) + 1) + '.jpg') + ')'
 }">
     <div class='container'>
-      <a href='#' class='no-underline bold color-emphasis social-link'>
+      <a
+        href='https://twitter.com/home?status=%23yoYaDon%C3%A9%20a%20%23Telet%C3%B3n%20para%20darles%20una%20mejor%20vida%20a%20nuestros%20ni%C3%B1os.%20Ve%20sus%20historias%20en%20http%3A//tuteleton.surge.sh'
+        target="_blank"
+        class='no-underline bold color-emphasis social-link'>
         #yoYaDoné
       </a>
       <div class='hero__info'>
