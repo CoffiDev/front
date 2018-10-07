@@ -6,7 +6,7 @@ import { getGeneral } from '@/lib/requests'
 
 import store from '@/store'
 
-const generalStream = interval(1000).pipe(
+const generalStream = interval(100000).pipe(
   switchMap(() => getGeneral()),
   distinctUntilChanged((x, y) => {
     return x.percentage === y.percentage
@@ -14,8 +14,5 @@ const generalStream = interval(1000).pipe(
 )
 
 generalStream.subscribe((general) => {
-  console.log('percentage', general.percentage)
-  console.log('donations amount', general.donations)
-
   store.commit('setGeneral', { general })
 })
