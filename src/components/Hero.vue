@@ -35,9 +35,9 @@
           con otros padecimientos
         </span>
       </div>
-      <button class='btn btn--action btn--hero'>
+      <a class='btn btn--action btn--hero' style="text-decoration: none" href="https://www.teleton.org/donar" target="_blank">
         Quiero donar
-      </button>
+      </a>
     </div>
   </section>
 </template>

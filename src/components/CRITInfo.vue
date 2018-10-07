@@ -1,7 +1,7 @@
 <template>
   <div class="crit-info">
     <div
-      style="padding: 30px 0"
+      style="padding: 30px 0; display: flex; justify-content: center; font-size: 24px; color: #6a1f75; font-weight: bold"
     >
       {{critName}}
     </div>
