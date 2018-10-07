@@ -16,6 +16,7 @@
       <Hero/>
       <Patients/>
       <SuccessCases/>
+      <c-r-i-t-info/>
     </div>
   </div>
 </template>
@@ -26,6 +27,7 @@ import Header from '@/components/Header.vue'
 import Hero from '@/components/Hero.vue' 
 import Patients from '@/components/Patients.vue' 
 import SuccessCases from '@/components/SuccessCases.vue'
+import CRITInfo from '@/components/CRITInfo'
 
 import { PatientsContainer } from '@/containers/PatientsContainer'
 import { HeroContainer } from '@/containers/HeroContainer'
@@ -42,6 +44,7 @@ export default {
   },
   components: {
     HelloWorld,
+    CRITInfo,
     Header: HeaderContainer(Header),
     Hero: HeroContainer(Hero),
     Patients: PatientsContainer(Patients),
