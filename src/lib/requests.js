@@ -31,3 +31,13 @@ export const getRandomIlment = async () => {
     achievements: IlmentResponse.logros
   }
 }
+
+export const getGeneral = async () => {
+  const response = await HttpService.get('random/general')
+
+  const GeneralResponse = response.data
+
+  return {
+    percentage: GeneralResponse.porcentaje
+  }
+}

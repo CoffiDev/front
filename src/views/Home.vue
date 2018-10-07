@@ -19,6 +19,7 @@ import Patients from '@/components/Patients.vue'
 import { PatientsContainer } from '@/containers/PatientsContainer'
 import { HeroContainer } from '@/containers/HeroContainer'
 
+
 export default {
   name: 'home',
   components: {
