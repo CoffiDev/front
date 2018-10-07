@@ -21,7 +21,7 @@
           <small>Meta:</small>
           <br/>
           <span class='color-accent'>
-            ${{Math.floor(goalDonation).toLocaleString()}}<small> + 1</small>
+            ${{Math.floor(goalDonation).toLocaleString()}}
           </span>
         </p>
         <p class='goal-bar__goal-item'>
