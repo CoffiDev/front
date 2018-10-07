@@ -3,14 +3,8 @@
     <svg class='crit-illustration'>
       <use :xlink:href="['#icon-center-' + getIllustration()]" />
     </svg>
-
-    <h2
-      style="padding: 30px 0; display: flex; justify-content: center; font-size: 24px; color: #6a1f75; font-weight: bold"
-    >
-      
-    </h2>
     <div class="text-center">
-      <select @change="handleSelectCRIT" name="" id="">
+      <select @change="handleSelectCRIT" name="" id="" class='select'>
         <option
           :value="option.name"
           v-for="option in options"

@@ -8,7 +8,7 @@
       <div class="row lal">
         <div class="col">
         <span>
-          Cantidad
+          Cant.
         </span>
         </div>
 
@@ -20,13 +20,7 @@
 
         <div class="col">
         <span>
-          Estado
-        </span>
-        </div>
-
-        <div class="col">
-        <span>
-          No. de Donaciones
+          Donaciones
         </span>
         </div>
       </div>
@@ -40,15 +34,11 @@
         <div class="col">
         <span>
           {{donation.type}}
+          <small style='white-space: nowrap'>{{donation.state}}</small>
         </span>
         </div>
-        <div class="col">
-        <span>
-          {{donation.state}}
-        </span>
-        </div>
-
-        <div class="col">
+        
+        <div class="col text-right">
         <span>
           {{donation.noOfDonations}}
         </span>
@@ -96,11 +86,11 @@
 
   .lal
     color: var(--color-accent)
-    font-size: 20px
+    font-size: 14px
     font-weight: bold
 
   .row
-    padding: 10px 0
+    padding: 5px 0
     display: flex
     justify-content: space-around
 

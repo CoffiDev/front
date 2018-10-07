@@ -20,6 +20,10 @@ section
   margin: auto
   background-color: #fff
 
+.text-right
+  text-align: right!important
+  justiy-content: flex-end!important
+
 .text-center
   text-align: center
 
@@ -126,6 +130,8 @@ section
 
     &:nth-child(2)
       display: none
+    small 
+      font-size: .7em
 
   &__goal 
     position: absolute
@@ -152,6 +158,19 @@ section
 .patients-grid
   max-width: 400px
   margin: 1.5em auto 
+
+.select 
+  border: none
+  outline: none
+  font-family: v(font-text)
+  font-size: v(font-medium)
+  font-weight: bold
+  color: v(color-primary)
+  text-indent: 40px
+  margin: 2em
+  +appearance(none)
+
+
 
 .patient 
   display: inline-block
@@ -217,7 +236,7 @@ section
 .bar-end
   position: absolute
   top: 0
-  right: -10%
+  right: -8px
   height: 105%
 
 @import 'hero'
