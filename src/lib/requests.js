@@ -20,6 +20,9 @@ export const getRandomCRIT = async () => {
     currentPercentage: CRITResponse.porcentajeBeneficiados,
     givenAmount: CRITResponse.montoDestinado,
     amountNeeded: CRITResponse.beneficiados,
+
+
+    requiredDonation: CRITResponse.recursosNecesariosDonacionFaltantes
   }
 }
 

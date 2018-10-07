@@ -28,7 +28,9 @@
           </svg>
         </span>
 
-        
+        <div class="bold">
+          ayúdanos a juntar otros ${{requiredDonation.toLocaleString()}}
+        </div>
       </div>
     </header>
     <div class='patients__grid'>
@@ -47,7 +49,9 @@ export default {
     patientsCurrent: {
       type: Number
     },
-
+    requiredDonation: {
+      type: Number
+    },
 
     currentTokens: {
       type: Number
@@ -58,3 +62,8 @@ export default {
   }
 }
 </script>
+
+<style lang="sass" scoped>
+  .bold
+    font-weight: bold
+</style>

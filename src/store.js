@@ -22,6 +22,7 @@ export default new Vuex.Store({
       patientsTotal: 0,
       givenAmount: 0,
       amountNeeded: 0,
+      requiredDonation: 0
     },
     general: {
       percentage: 0,
