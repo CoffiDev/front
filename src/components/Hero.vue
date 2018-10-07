@@ -1,23 +1,27 @@
 <template>
   <section class='hero' :class="'hero--' + ailmentName">
       <div class='hero__info'>
-        <span class='hero__line-1'>
+        <span class='hero__line hero__line-1'>
           Con tu donativo
         </span>
-        <span class='hero__line-2'>
-          atendermos a
+        <span class='hero__line hero__line-2'>
+          atenderemos a
         </span>
-        <span class='hero__line-3'>{{attendedChildren}} niñas</span>
-        <span class='hero__line-4'> y niños</span>
-        <span class='hero__line-5'>
+        <span class='hero__line hero__line-3'>
+          {{attendedChildren}} niñas
+        </span>
+        <span class='hero__line hero__line-4'> 
+          y niños
+        </span>
+        <span class='hero__line hero__line-5'>
           con {{ailmentName}}
         </span>
-        <span class='hero__line-6'>
+        <span class='hero__line hero__line-6'>
           entre casi 16000<br/>
           con otros padecimientos
         </span>
       </div>
-      <button class='btn btn--action'>
+      <button class='btn btn--action btn--hero'>
         Quiero donar
       </button>
   </section>
