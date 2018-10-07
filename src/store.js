@@ -22,6 +22,7 @@ export default new Vuex.Store({
       patientsTotal: 0,
       givenAmount: 0,
       amountNeeded: 0,
+      requiredDonation: 0
     },
     general: {
       percentage: 0,
@@ -36,6 +37,9 @@ export default new Vuex.Store({
       state.ilment = ilment
       state.general = general
       state.crit = crit
+    },
+    setGeneral(state, { general }) {
+      state.general = general
     }
   },
   actions: {

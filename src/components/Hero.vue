@@ -1,5 +1,5 @@
 <template>
-  <section class='hero' :class="'hero--' + ailmentName" :style="{'background-image': 'url(' + require('../assets/header-' + Math.round(Math.random()*5) + '.jpg') + ')'
+  <section class='hero' :class="'hero--' + ailmentName" :style="{'background-image': 'url(' + require('../assets/header-' + (Math.round(Math.random() * 4) + 1) + '.jpg') + ')'
 }">
     <div class='container'>
       <div class='hero__info'>
@@ -14,9 +14,9 @@
           <animate-number
             class="hero__line hero__line-3"
             v-if="attendedChildren > 0"
-            :from="attendedChildren - (attendedChildren / 1.5)"
+            :from="0"
             :to="attendedChildren"
-            duration="3000"
+            duration="2500"
             easing="easeOutQuad"
             :formatter="num => num.toFixed(0)"
           />
@@ -43,8 +43,6 @@
 </template>
 
 <script>
-
-
 export default {
   name: 'Hero',
   props: {

@@ -10,7 +10,7 @@
       </strong>
 
       <div class="patients-grid">
-        <span v-for="(token, index) in maxTokens - currentTokens" class="patient patient--complete" :style="{'--patient-index': index}">
+        <span v-for="(token, index) in currentTokens" class="patient patient--complete" :style="{'--patient-index': index}">
           <svg v-if="index % 2 == 0">
             <use xlink:href='#icon-girl-complete' />
           </svg>
@@ -19,7 +19,7 @@
           </svg>
         </span>
 
-        <span v-for="(token, index) in currentTokens" class='patient patient--pending'>
+        <span v-for="(token, index) in maxTokens - currentTokens" class='patient patient--pending'>
           <svg v-if="index % 2 == 0" viewbox='0 0 38 58'>
             <use xlink:href='#icon-girl' />
           </svg>
@@ -28,7 +28,9 @@
           </svg>
         </span>
 
-        
+        <div class="bold">
+          ayúdanos a juntar otros ${{requiredDonation.toLocaleString()}}
+        </div>
       </div>
     </header>
     <div class='patients__grid'>
@@ -47,7 +49,9 @@ export default {
     patientsCurrent: {
       type: Number
     },
-
+    requiredDonation: {
+      type: Number
+    },
 
     currentTokens: {
       type: Number
@@ -58,3 +62,8 @@ export default {
   }
 }
 </script>
+
+<style lang="sass" scoped>
+  .bold
+    font-weight: bold
+</style>

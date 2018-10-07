@@ -11,13 +11,12 @@ export const PatientsContainer = (component) => {
 
       currentPercentage() { return this.$store.state.crit.currentPercentage },
 
-      /*
-      patientsMax() {
-        return (this.patientsCurrent() * 100) / this.patientsPercentage()
-      },
-      */
       currentTokens() {
-        return  Math.floor(this.currentPercentage * this.maxTokens / 100)
+        return  Math.floor((this.currentPercentage / 100) * this.maxTokens)
+      },
+
+      requiredDonation() {
+        return this.$store.state.crit.requiredDonation
       }
     },
     render(h) {
@@ -26,7 +25,9 @@ export const PatientsContainer = (component) => {
         patientsCurrent: this.patientsCurrent,
 
         currentTokens: this.currentTokens,
-        maxTokens: this.maxTokens
+        maxTokens: this.maxTokens,
+
+        requiredDonation: this.requiredDonation,
       }
       return h(component, { props })
     }

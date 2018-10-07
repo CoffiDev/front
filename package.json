@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "rxjs": "^6.3.3",
     "svg-inline-loader": "^0.8.0",
     "vue": "^2.5.17",
     "vue-animate-number": "^0.4.2",

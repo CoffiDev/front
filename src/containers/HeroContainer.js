@@ -2,7 +2,7 @@ export const HeroContainer = (component) => {
   return {
     computed: {
       attendedChildren() {
-        return this.$store.state.crit.patientsTotal
+        return this.$store.state.ilment.attendedChildren
       },
       ailmentName() {
         return this.$store.state.ilment.ailmentName

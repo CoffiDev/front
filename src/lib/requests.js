@@ -20,6 +20,9 @@ export const getRandomCRIT = async () => {
     currentPercentage: CRITResponse.porcentajeBeneficiados,
     givenAmount: CRITResponse.montoDestinado,
     amountNeeded: CRITResponse.beneficiados,
+
+
+    requiredDonation: CRITResponse.recursosNecesariosDonacionFaltantes
   }
 }
 
@@ -31,7 +34,7 @@ export const getRandomIlment = async () => {
   return {
     attendedChildren: parseInt(IlmentResponse.total),
     ailmentName: IlmentResponse.enfermedad.split(',')[0],
-    totalGraduated: parseInt(IlmentResponse.total),
+    totalGraduated: parseInt(IlmentResponse.totalEgresados),
     testimony: IlmentResponse.testimonio,
     graduated: IlmentResponse.nombreEgresado,
     achievements: IlmentResponse.logros
@@ -44,8 +47,7 @@ export const getGeneral = async () => {
   const GeneralResponse = response.data
 
   return {
-    goal: GeneralResponse.meta || 364097181,
-
+    goal: GeneralResponse.meta,
     percentage: GeneralResponse.porcentaje,
     donations: GeneralResponse.donativos,
     currentChildren: GeneralResponse.pacientesActuales,

@@ -33,6 +33,8 @@ import { HeaderContainer } from '@/containers/HeaderContainer'
 
 import { SuccessCaseContainer } from '@/containers/SuccessCaseContainer'
 
+import '@/lib/streams'
+
 export default {
   name: 'home',
   beforeMount() {
