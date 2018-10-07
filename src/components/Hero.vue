@@ -12,9 +12,9 @@
           <animate-number
             class="hero__line hero__line-3"
             v-if="attendedChildren > 0"
-            :from="attendedChildren - (attendedChildren / 2.5)"
+            :from="attendedChildren - (attendedChildren / 1.5)"
             :to="attendedChildren"
-            duration="2000"
+            duration="3000"
             easing="easeOutQuad"
             :formatter="num => num.toFixed(0)"
           />

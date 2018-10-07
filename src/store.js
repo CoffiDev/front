@@ -42,9 +42,9 @@ export default new Vuex.Store({
     async getAppState({ commit }) {
       console.log('kheee')
 
-      const ilment = await getRandomIlment()
       const general = await getGeneral()
       const crit = await getRandomCRIT()
+      const ilment = await getRandomIlment()
 
       commit('setAppState', { ilment, general, crit })
     }

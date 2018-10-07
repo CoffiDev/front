@@ -1,10 +1,18 @@
 <template>
-  <div class="home">
-    <Header 
-      :progressDonation=144555566
-      :progressChildren=100000
-      :goalDonation=364097181
-      :goalChildren=100000 />
+  <div
+    class="home"
+    style="height: 100%"
+  >
+    <transition
+      name="slide-fade"
+    >
+      <div
+        class="loader"
+        v-if="$store.state.ilment.attendedChildren  === 0"
+      ></div>
+    </transition>
+
+    <Header/>
     <Hero/>
     <Patients/>
     <SuccessCases/>
@@ -38,3 +46,21 @@ export default {
   }
 }
 </script>
+
+<style lang="sass" scoped>
+  .loader
+    width: 100vw
+    height: 100vh
+    background: var(--color-primary)
+    position: absolute
+    left: 0
+    top: 0
+    z-index: 4
+
+  .slide-fade-leave-active
+    transition: all 0.4s ease-out
+
+  .slide-fade-leave-to
+    opacity: 0
+
+</style>
