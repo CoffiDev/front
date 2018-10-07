@@ -57,6 +57,11 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    async getDonations(state) {
+      const donations = await getDonations()
+      state.donations = donations
+    },
+
     async getAppState({ commit }) {
 
       const general = await getGeneral()

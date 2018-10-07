@@ -15,4 +15,5 @@ const generalStream = interval(100000).pipe(
 
 generalStream.subscribe((general) => {
   store.commit('setGeneral', { general })
+  store.dispatch('getDonations')
 })
