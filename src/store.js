@@ -36,6 +36,9 @@ export default new Vuex.Store({
       state.ilment = ilment
       state.general = general
       state.crit = crit
+    },
+    setGeneral(state, { general }) {
+      state.general = general
     }
   },
   actions: {
