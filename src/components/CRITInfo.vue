@@ -1,5 +1,11 @@
 <template>
   <div class="crit-info">
+    <div
+      style="padding: 30px 0"
+    >
+      {{critName}}
+    </div>
+
     <information-nugget
       :lines="[
         { text: benefitChildren.toLocaleString(), type: 'accent' },
@@ -44,6 +50,9 @@ export default {
     InformationNugget
   },
   props: {
+    critName: {
+      type: String
+    },
     benefitChildren: {
       type: Number,
       default: 1147

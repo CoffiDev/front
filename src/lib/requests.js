@@ -6,6 +6,25 @@ const HttpService = axios.create({
   baseURL: API_BASE_URL
 })
 
+export const getCritInfo = async (name) => {
+  const response = await HttpService.get('datos/crit')
+
+  const CRITResponse = response.data.crits.find(x =>
+    console.log(x) || x.nombre === name
+  )
+
+  console.log(CRITResponse)
+
+  return {
+    name: CRITResponse.nombre,
+    benefitChildren:CRITResponse.beneficiados,
+    donationsRepresentationPercentage:CRITResponse.porcentaje,
+    costPerpatient:CRITResponse.costoPaciente,
+    maxAmountRequired:CRITResponse.costoMaxOperaciones,
+    maxAmountPatients:CRITResponse.a || 2000,
+  }
+}
+
 export const getRandomCRIT = async () => {
   const response = await HttpService.get('random/crit')
 

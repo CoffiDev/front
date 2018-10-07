@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-import { getGeneral, getRandomIlment, getRandomCRIT } from '@/lib/requests'
+import { getGeneral, getRandomIlment, getRandomCRIT, getCritInfo } from '@/lib/requests'
 
 export default new Vuex.Store({
   state: {
@@ -24,6 +24,14 @@ export default new Vuex.Store({
       amountNeeded: 0,
       requiredDonation: 0
     },
+    critInfo: {
+      name: '',
+      benefitChildren: 0,
+      donationsRepresentationPercentage: 0,
+      costPerpatient: 0,
+      maxAmountRequired: 0,
+      maxAmountPatients: 0,
+    },
     general: {
       percentage: 0,
       donations: 0,
@@ -33,10 +41,11 @@ export default new Vuex.Store({
     }
   },
   mutations: {
-    setAppState(state, { ilment, general, crit }) {
+    setAppState(state, { ilment, general, crit, critInfo }) {
       state.ilment = ilment
       state.general = general
       state.crit = crit
+      state.critInfo = critInfo
     },
     setGeneral(state, { general }) {
       state.general = general
@@ -49,8 +58,11 @@ export default new Vuex.Store({
       const general = await getGeneral()
       const crit = await getRandomCRIT()
       const ilment = await getRandomIlment()
+      const critInfo = await getCritInfo(crit.centerName)
 
-      commit('setAppState', { ilment, general, crit })
+      console.log('crit info', critInfo)
+
+      commit('setAppState', { ilment, general, crit, critInfo })
     }
   }
 })

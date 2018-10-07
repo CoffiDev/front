@@ -34,6 +34,7 @@ import { HeroContainer } from '@/containers/HeroContainer'
 import { HeaderContainer } from '@/containers/HeaderContainer'
 
 import { SuccessCaseContainer } from '@/containers/SuccessCaseContainer'
+import { CritInfoContainer } from '@/containers/CRITInfoContainer'
 
 import '@/lib/streams'
 
@@ -44,7 +45,7 @@ export default {
   },
   components: {
     HelloWorld,
-    CRITInfo,
+    CRITInfo: CritInfoContainer(CRITInfo),
     Header: HeaderContainer(Header),
     Hero: HeroContainer(Hero),
     Patients: PatientsContainer(Patients),
