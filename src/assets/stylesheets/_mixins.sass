@@ -1,0 +1,113 @@
+@function em($pxs, $em: $base-em, $parent_em_size:1)
+  $new_px: null
+  @each $px in $pxs 
+    @if $px == 0
+      $new_px: $new_px #{0}
+    @else 
+      $new_px: $new_px #{($px/$em)+em}
+
+  @return $new_px
+
+@function alpha($color, $opacity)
+  $opacity: 1 - $opacity
+  $alphacolor: transparentize($color, $opacity)
+  @return $alphacolor
+
+@function rotateDeg($x:0, $y:0, $z:0)
+  @return rotateX(#{$x}deg) rotateY(#{$y}deg) rotateZ(#{$z}deg)
+
+@mixin triangle($size: 10px, $color: #000, $direction: 'down')
+  width: 0
+  height: 0
+  @if $direction == 'down'
+    border-left: $size solid transparent
+    border-right: $size solid transparent
+    border-top: $size solid $color
+  @else if $direction == 'up'
+    border-left: $size solid transparent
+    border-right: $size solid transparent
+    border-bottom: $size solid $color
+  @else if $direction == 'left'
+    border-top: $size solid transparent
+    border-right: $size solid $color
+    border-bottom: $size solid transparent
+  @else if $direction == 'right'
+    border-top: $size solid transparent
+    border-left: $size solid $color
+    border-bottom: $size solid transparent
+  @content
+
+    
+@mixin placeholder-color($color: #fff)
+  $prefixes: "&::-webkit-input-", "&::-moz-", "&:-ms-input-", "&::-ms-input-" 
+  @each $prefix in $prefixes
+    #{$prefix}placeholder 
+      color: $color 
+    
+    
+@mixin ratio($a: 1, $b: 1, $width: 100%, $proportional: false)
+  $ratio: ($b/$a*$width)
+  padding-top: $ratio
+  position: relative
+  width: $width
+  & > *:first-child
+    position: absolute
+    top: 0 
+    left: 0
+    @if $proportional == false
+      width: 100%
+      height: 100%
+    @else if $proportional == width 
+      width: auto
+      height: 100%
+    @else if $proportional == height 
+      width: 100%
+      height: auto
+      
+
+@mixin fullscreen($position: fixed)
+  position: $position
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  @content
+
+
+@mixin size($dimensions)
+  $width: nth($dimensions, 1)
+  $height: nth($dimensions, 1)
+  
+  @if length($dimensions) == 2
+    $width: nth($dimensions, 1)
+    $height: nth($dimensions, 2) 
+  
+  width: $width
+  height: $height 
+
+
+@mixin animator($name, $arguments)
+  //$duration: .3s, $ease: linear, $delay: 0, $iteration: 1, $fillmode: forwards, $direction: normal
+  $duration: map-get($arguments, duration)
+  $delay: map-get($arguments, delay)
+  $iteration-count: map-get($arguments, iteration-count)
+  $timing-function: map-get($arguments, timing-function)
+  $fill-mode: map-get($arguments, fill-mode)
+  $direction: map-get($arguments, direction)
+  //DEFAULTS
+  $duration: .3s !default
+  $delay: 0s !default
+  $iteration-count: 1 !default
+  $timing-function: linear !default
+  $fill-mode: forwards !default
+  $direction: normal !default
+  @at-root
+    @keyframes #{$name}
+      @content
+  animation-name: $name
+  animation-duration: $duration
+  animation-delay: $delay
+  animation-iteration-count: $iteration-count
+  animation-timing-function: $timing-function
+  animation-fill-mode: $fill-mode 
+  animation-direction: $direction

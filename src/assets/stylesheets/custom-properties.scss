@@ -1,0 +1,63 @@
+/// @require {function} rem() <_mixins.sass>
+
+$custom_properties: (
+
+  font-text: "'Open Sans', sans-serif", 
+  font-titles: "'Open Sans', sans-serif",
+  font-alt: "'Open Sans', sans-serif",
+  
+  font-xsmall: .75rem, 
+  font-small: .8rem, 
+  font-normal: 1rem,
+  font-medium: 1.3em,
+  font-large: 2rem,
+  font-xlarge: 2.8rem,
+
+  color-primary: #6a1f75, 
+  color-accent: #ffcd00,
+  color-secondary: #33043a,
+  color-accent-2: #ffab00,
+  color-emphasis: #fff,
+  color-muted: #4B5569,
+  color-muted-alt: #404b60,
+  color-muted-alt-2: #6d798c,
+  color-invert: #000,
+
+  background-main: #202935,
+  background-alt: #0f141c,
+  background-alt-transparent: alpha(#0f141c, .3),
+
+  // background-header: #1f252d,
+  background-header: #1c232e,
+  background-sidebar: #2f3541,
+  background-gray-2: #313b4c,
+
+  spacing-thin: .3em,
+  spacing-light: .625em,
+  spacing-regular: 1em,
+  spacing-medium: 1.875em,
+  spacing-large: 2.5em,
+  spacing-xlarge: 5em,
+
+  spacing-fixed-thin: 5px,
+  spacing-fixed-light: 10px,
+  spacing-fixed-regular: 16px,
+  spacing-fixed-medium: 30px,
+  spacing-fixed-large: 40px,
+  spacing-fixed-xlarge: 80px,
+
+  header-height: 60px,
+  content-height: calc(100vh - var(--header-height)),
+
+  input-text-height: 45px,
+);
+
+:root {
+  @each $key, $value in $custom_properties {
+    --#{$key}: #{$value};
+  }
+}
+
+@function v($prop){
+  @return #{'var(--' + $prop + ')'}
+}

@@ -17,7 +17,7 @@
       <div class='goal-bar__goal'>
         <p class='goal-bar__goal-item'>
           <span>Meta:</span>
-          {{goalDonation}}
+          {{goalDonation}}+1
         </p>
         <p class='goal-bar__goal-item'>
           <span>Meta:</span>
