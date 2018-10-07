@@ -23,6 +23,12 @@
           Estado
         </span>
         </div>
+
+        <div class="col">
+        <span>
+          No. de Donaciones
+        </span>
+        </div>
       </div>
 
       <div v-for="donation in donations" class="row lel">
@@ -41,7 +47,15 @@
           {{donation.state}}
         </span>
         </div>
+
+        <div class="col">
+        <span>
+          {{donation.noOfDonations}}
+        </span>
+        </div>
       </div>
+
+
     </div>
   </div>
 </template>
@@ -68,7 +82,8 @@
     justify-content: center
 
   .col
-    width: 33%
+    padding: 0 10px
+    width: 25%
 
   .lel .col
     display: flex
@@ -85,6 +100,7 @@
     font-weight: bold
 
   .row
+    padding: 10px 0
     display: flex
     justify-content: space-around
 

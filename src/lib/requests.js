@@ -70,24 +70,13 @@ export const getGeneral = async () => {
 
 export const getDonations = async () => {
   const response = await HttpService.post('datos/donativos', {
-    limit: 4,
+    limit: 10,
     "order": [["fecha", "asc"]]
   })
 
-  /*
-  created_at: "2018-10-07T09:08:12.517Z"
-  donacionMultiple: null
-  donacionUnitaria: true
-  donativo: 50
-  estado: "17"
-  fecha: "1970-01-01"
-  id: 3106
-  origen: "Banamex"
-  updated_at: "2018-10-07T09:08:12.517Z"
-   */
-
   return response.data.donativos.map(x => {
     return {
+      noOfDonations: x.donacionUnitaria ? 1 : x.donacionMultiple,
       amount: x.donativo,
       date: x.fecha,
       type: x.origen,
