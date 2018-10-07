@@ -1,9 +1,14 @@
 <template>
   <section class="patients">
-    <header class="patients__header">
+    <header class="patients__header text-center">
       El <strong>{{centerName}}</strong>
       <br/>
-      aun necesita atender a {{Math.ceil(patientsCurrent)}} pacientes más</header>
+      aun necesita atender a 
+      <br/>
+      <strong class='text-emphasis'>
+        {{Math.ceil(patientsCurrent)}} pacientes más
+      </strong>
+    </header>
     <div class='patients__grid'>
     </div>
   </section>
