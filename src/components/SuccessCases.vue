@@ -1,5 +1,5 @@
 <template>
-  <section class="text-center">
+  <section class="text-center color-primary">
     <p>
       <strong class='text-emphasis'>{{patientName}}</strong>
       <br/>
