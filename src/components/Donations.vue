@@ -25,7 +25,7 @@
         </div>
 
         <div class="col">
-        <span>
+        <span class="last">
           No. de Donaciones
         </span>
         </div>
@@ -34,7 +34,7 @@
       <div v-for="donation in donations" class="row lel">
         <div class="col">
         <span>
-          {{donation.amount}}
+          {{donation.amount.toLocaleString()}}
         </span>
         </div>
         <div class="col">
@@ -49,7 +49,7 @@
         </div>
 
         <div class="col">
-        <span>
+        <span class="last">
           {{donation.noOfDonations}}
         </span>
         </div>
@@ -106,4 +106,7 @@
 
   .cc
     padding: 30px
+
+  .last
+    text-align: right
 </style>

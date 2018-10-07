@@ -54,12 +54,15 @@ export default new Vuex.Store({
     },
     selectCRIT(state, selectedCRIT) {
       state.selectedCRIT = selectedCRIT
+    },
+    setDonations(state, donations) {
+      state.donations = donations
     }
   },
   actions: {
-    async getDonations(state) {
+    async getDonations({ commit }) {
       const donations = await getDonations()
-      state.donations = donations
+      commit('setDonations', donations)
     },
 
     async getAppState({ commit }) {
@@ -70,7 +73,7 @@ export default new Vuex.Store({
 
       const critsInfo = await getCritInfo()
 
-      const donations = await getDonations()
+      const donations = [] // await getDonations()
 
       commit('setAppState', { ilment, general, crit, critsInfo, donations })
     }
