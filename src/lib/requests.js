@@ -42,7 +42,7 @@ export const getGeneral = async () => {
   const GeneralResponse = response.data
 
   return {
-    goal: GeneralResponse.meta || 2000000,
+    goal: GeneralResponse.meta || 364097181,
 
     percentage: GeneralResponse.porcentaje,
     donations: GeneralResponse.donativos,

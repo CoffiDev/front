@@ -26,6 +26,9 @@ section
   line-height: 1
   letter-spacing: -0.07em
 
+.lowercase 
+  text-transform: lowercase
+
 .site-header
   color: v(color-emphasis)
   background-color: var(--color-secondary)
@@ -40,7 +43,7 @@ section
 
 .logo 
   margin: 0
-  padding: 10px 20px
+  padding: 5px 20px
   position: absolute
   z-index: 2
   img 
@@ -53,7 +56,15 @@ section
     background-color: v(color-primary)
     height: 50px
     font-size: 14px
+    margin-top: -1px
     position: relative
+    width: var(--progressPercent)
+    max-width: 1px
+    +animator('prog', (delay: .5s, duration: 4s))
+      0%
+        max-width: 1px
+      100%
+        max-width: 100vw
 
   &__progress-item
     position: absolute
@@ -62,6 +73,12 @@ section
     left: 100%
     white-space: nowrap
     line-height: 1
+    opacity: 0
+    +animator('fade-in', (delay: 1s, duration: .6s))
+      0%
+        opacity: 0
+      100%
+        opacity: 1
 
     &:nth-child(2)
       display: none
@@ -88,6 +105,18 @@ section
   color: v(color-primary)
   &__header 
 
+.patients-grid
+  margin-top: 1.5em
+.patient 
+  display: inline-block
+  &--complete 
+    fill: v(color-primary)
+  &--pending 
+    fill: v(color-accent-2)
+  svg 
+    width: 26px
+    height: 40px
+    display: inline-block
 
 
 .btn 

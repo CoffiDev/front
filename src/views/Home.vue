@@ -11,11 +11,12 @@
         v-if="$store.state.ilment.attendedChildren  === 0"
       ></div>
     </transition>
-
-    <Header/>
-    <Hero/>
-    <Patients/>
-    <SuccessCases/>
+    <div  v-if="$store.state.ilment.attendedChildren > 0">
+      <Header/>
+      <Hero/>
+      <Patients/>
+      <SuccessCases/>
+    </div>
   </div>
 </template>
 
