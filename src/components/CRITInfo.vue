@@ -4,7 +4,19 @@
       <use :xlink:href="['#icon-center-' + getIllustration()]" />
     </svg>
     <h2 class='text-emphasis text-center color-primary'>
-      {{critName}}
+
+    <select v-model="selectedCRIT" name="" id="">
+      <option
+        :value="option.name"
+        v-for="option in options"
+      >
+        {{option.name}}
+      </option>
+    </select>
+    <h2
+      style="padding: 30px 0; display: flex; justify-content: center; font-size: 24px; color: #6a1f75; font-weight: bold"
+    >
+
     </h2>
 
     <information-nugget
@@ -49,7 +61,10 @@
 import InformationNugget from './InformationNugget'
 
 export default {
-  name: "CritInfo",
+  name: "CRITInfo",
+  data () {
+    return { selectedCRIT: null }
+  },
   components: {
     InformationNugget
   },
@@ -76,6 +91,15 @@ export default {
     maxAmountPatients: {
       type: Number,
       default: 2000
+    },
+    handleSelectCRIT: {
+      type: Function
+    },
+    options: Array
+  },
+  watch: {
+    selectedCRIT(val) {
+      this.handleSelectCRIT(val)
     }
   },
   data () {

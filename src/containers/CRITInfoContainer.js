@@ -1,35 +1,27 @@
 export const CritInfoContainer = (component) => {
   return {
     computed: {
-      benefitChildren() {
-        return this.$store.state.critInfo.benefitChildren
+      selectedCRIT() {
+        return this.$store.state.critsInfo.find(
+          x => x.name === this.$store.state.selectedCRIT
+        ) || {}
       },
-      donationsRepresentationPercentage() {
-        return this.$store.state.critInfo.donationsRepresentationPercentage
-      },
-      costPerpatient() {
-        return this.$store.state.critInfo.costPerpatient
-      },
-      maxAmountRequired() {
-        return this.$store.state.critInfo.maxAmountRequired
-      },
-      maxAmountPatients() {
-        return this.$store.state.critInfo.maxAmountPatients
-      },
-      critName() {
-        return this.$store.state.critInfo.name
+      options() {
+        return this.$store.state.critsInfo
+      }
+    },
+    methods: {
+      handleSelectCRIT(selected) {
+        this.$store.commit('selectCRIT', selected)
       }
     },
     render(h) {
-      const props = {
-        critName: this.critName,
-        benefitChildren: this.benefitChildren,
-        donationsRepresentationPercentage: this.donationsRepresentationPercentage,
-        costPerpatient: this.costPerpatient,
-        maxAmountRequired: this.maxAmountRequired,
-        maxAmountPatients: this.maxAmountRequired,
-      }
-      return h(component, { props })
+      const lal = this.selectedCRIT
+
+      lal.handleSelectCRIT = this.handleSelectCRIT
+      lal.options = this.options
+
+      return h(component, { props: lal })
     }
   }
 }

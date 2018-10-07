@@ -24,7 +24,9 @@ export default new Vuex.Store({
       amountNeeded: 0,
       requiredDonation: 0
     },
-    critInfo: {
+    critsInfo: [],
+    /*
+    {
       name: '',
       benefitChildren: 0,
       donationsRepresentationPercentage: 0,
@@ -32,23 +34,34 @@ export default new Vuex.Store({
       maxAmountRequired: 0,
       maxAmountPatients: 0,
     },
+    */
     general: {
       percentage: 0,
       donations: 0,
       goal: 1000000,
       currentChildren: 100,
       goalChildren: 200
+    },
+    selectedCRIT: null
+  },
+  getters: {
+    selectedCRITInfo: (state) => {
+      return state.critsInfo.find(x => x.name === state.selectedCRIT) ||
+        state.critsInfo[0]
     }
   },
   mutations: {
-    setAppState(state, { ilment, general, crit, critInfo }) {
+    setAppState(state, { ilment, general, crit, critsInfo }) {
       state.ilment = ilment
       state.general = general
       state.crit = crit
-      state.critInfo = critInfo
+      state.critsInfo = critsInfo
     },
     setGeneral(state, { general }) {
       state.general = general
+    },
+    selectCRIT(state, selectedCRIT) {
+      state.selectedCRIT = selectedCRIT
     }
   },
   actions: {
@@ -58,11 +71,12 @@ export default new Vuex.Store({
       const general = await getGeneral()
       const crit = await getRandomCRIT()
       const ilment = await getRandomIlment()
-      const critInfo = await getCritInfo(crit.centerName)
 
-      console.log('crit info', critInfo)
+      const critsInfo = await getCritInfo()
 
-      commit('setAppState', { ilment, general, crit, critInfo })
+      console.log('crit info', critsInfo)
+
+      commit('setAppState', { ilment, general, crit, critsInfo })
     }
   }
 })
