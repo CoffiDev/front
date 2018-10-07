@@ -179,10 +179,11 @@ section
     font-size: 1.25rem
   &--hero 
     position: absolute
-    bottom: -2.5em
+    bottom: -1.5em
     left: 50%
     white-space: nowrap
     transform: translateX(-50%)
+    z-index: 2
 
 .crit-illustration 
   width: 100%
@@ -191,6 +192,17 @@ section
   display: block
   fill: v(color-accent-2)
 
+.yellow-topping 
+  position: absolute
+  bottom: -1px
+  left: 0
+  width: 100%
+
+.bar-end
+  position: absolute
+  top: 0
+  right: -10%
+  height: 105%
 
 @import 'hero'
 
@@ -201,6 +213,8 @@ section
     left: 20px
     img 
       width: 60px
+  .bar-end 
+    right: -8px
   .goal-bar
     font-size: 1.3em
     &__goal 

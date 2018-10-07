@@ -15,6 +15,7 @@
           <br/>
           {{progressChildren}} niños y niñas
         </p>
+        <img class='bar-end' src='@/assets/bar-end.svg' aria-hidden='true'/>
       </div>
       <div class='goal-bar__goal'>
         <p class='goal-bar__goal-item'>

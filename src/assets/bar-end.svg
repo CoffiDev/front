@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="50px" viewBox="0 0 13 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>bar-end</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="iPhone-8" transform="translate(-75.000000, -42.000000)">
+            <g id="bar-end" transform="translate(75.000000, 42.000000)">
+                <path d="M8.10452926,1.77635684e-14 L5.15062115,1.0658141e-13 C1.71687372,4.89915963 -2.57933772e-14,10.0333406 -1.77635684e-15,15.4025429 C4.79731854e-14,23.4067794 5.15062115,31.9100209 5.15062115,38.1043709 C5.15062115,41.1242202 5.15062115,45.0894299 5.15062115,50 L8.10452926,50 L8.10452926,1.77635684e-14 Z" id="Rectangle-Copy-2" fill="#33043A"></path>
+                <path d="M7.50093617,50 C7.0253617,49.6230495 2,45.5785712 2,43.0729659 C2,41.3786235 3.4173617,40 5.15957447,40 C6.03758511,40 6.85369149,40.3426926 7.45740426,40.9651389 L7.5,41.0089571 L7.54247872,40.9651389 C8.14630851,40.3426926 8.96229787,40 9.84042553,40 C11.5825213,40 13,41.3786235 13,43.0729659 C13,45.7916302 7.9807234,49.638642 7.50093617,50" id="Fill-1" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>
