@@ -1,18 +1,12 @@
-import { getRandomIlment } from '@/lib/requests'
-
 export const HeroContainer = (component) => {
   return {
-    data() {
-      return {
-        attendedChildren: 0,
-        ailmentName: ''
+    computed: {
+      attendedChildren() {
+        return this.$store.state.crit.patientsTotal
+      },
+      ailmentName() {
+        return this.$store.state.ilment.ailmentName
       }
-    },
-    async beforeMount() {
-      const RandomIlment = await getRandomIlment()
-
-      this.attendedChildren = RandomIlment.attendedChildren
-      this.ailmentName = RandomIlment.ailmentName
     },
     render(h) {
       const props = {

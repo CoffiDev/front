@@ -54,10 +54,9 @@ export default {
       type: Number,
       default: 3333
     },
-  },
-  data (){
-    return {
-      progressPercent: (this.progressDonation / this.goalDonation) * 100
+    progressPercent: {
+      type: Number,
+      default: 0
     }
   }
 }

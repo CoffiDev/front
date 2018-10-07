@@ -1,29 +1,32 @@
-import { getRandomCRIT } from '../lib/requests'
-
 export const PatientsContainer = (component) => {
   return {
     data() {
       return {
-        centerName: 'Wiw',
-        patientsTotal: 0,
-        goalPercentage: 0,
-        amountNeeded: 0,
+        maxTokens: 24
       }
     },
-    async beforeMount() {
-      const RandomCRIT = await getRandomCRIT()
+    computed: {
+      centerName() { return this.$store.state.crit.centerName },
+      patientsCurrent() { return this.$store.state.crit.patientsCurrent },
 
-      this.centerName = RandomCRIT.centerName
-      this.patientsTotal = RandomCRIT.patientsTotal
-      this.goalPercentage = RandomCRIT.goalPercentage
-      this.amountNeeded = RandomCRIT.amountNeeded
+      currentPercentage() { return this.$store.state.crit.currentPercentage },
+
+      /*
+      patientsMax() {
+        return (this.patientsCurrent() * 100) / this.patientsPercentage()
+      },
+      */
+      currentTokens() {
+        return  Math.floor(this.currentPercentage * this.maxTokens / 100)
+      }
     },
     render(h) {
       const props = {
         centerName: this.centerName,
-        patientsTotal: this.patientsTotal,
-        goalPercentage: this.goalPercentage,
-        amountNeeded: this.amountNeeded
+        patientsCurrent: this.patientsCurrent,
+
+        currentTokens: this.currentTokens,
+        maxTokens: this.maxTokens
       }
       return h(component, { props })
     }

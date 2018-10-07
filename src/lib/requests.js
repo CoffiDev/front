@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const HttpService = axios.create({
-  baseURL: 'http://localhost:3000/api'
+  baseURL: 'http://ca6dc3bd.ngrok.io/api'
 })
 
 export const getRandomCRIT = async () => {
@@ -11,8 +11,12 @@ export const getRandomCRIT = async () => {
 
   return {
     centerName: CRITResponse.nombre,
+    patientsCurrent: CRITResponse.beneficiados,
+
     patientsTotal: CRITResponse.pacientes,
-    goalPercentage: CRITResponse.montoDestinado,
+
+    currentPercentage: CRITResponse.porcentajeBeneficiados,
+    givenAmount: CRITResponse.montoDestinado,
     amountNeeded: CRITResponse.beneficiados,
   }
 }
@@ -23,7 +27,7 @@ export const getRandomIlment = async () => {
   const IlmentResponse = response.data
 
   return {
-    attendedChildren: IlmentResponse.total,
+    attendedChildren: parseInt(IlmentResponse.total),
     ailmentName: IlmentResponse.enfermedad.split(',')[0],
 
     testimony: IlmentResponse.testimonio,
@@ -38,6 +42,11 @@ export const getGeneral = async () => {
   const GeneralResponse = response.data
 
   return {
-    percentage: GeneralResponse.porcentaje
+    goal: GeneralResponse.meta || 2000000,
+
+    percentage: GeneralResponse.porcentaje,
+    donations: GeneralResponse.donativos,
+    currentChildren: GeneralResponse.pacientesActuales,
+    goalChildren: GeneralResponse.pacientesMaximo
   }
 }

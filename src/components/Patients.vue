@@ -6,8 +6,18 @@
       aun necesita atender a 
       <br/>
       <strong class='text-emphasis'>
-        {{patientsCurrent}} pacientes más
+        {{Math.ceil(patientsCurrent)}} pacientes más
       </strong>
+
+      <div class="monitos">
+        <div  v-for="token in currentTokens">
+          xaxa
+        </div>
+
+        <div v-for="token in maxTokens - currentTokens">
+          xoxo
+        </div>
+      </div>
     </header>
     <div class='patients__grid'>
     </div>
@@ -22,23 +32,16 @@ export default {
       type: String,
       default: 'Centro Autismo Teletón'
     },
-    patientsTotal: {
-      type: Number,
-      default: 120
+    patientsCurrent: {
+      type: Number
     },
-    goalPercentage: {
-      type: Number,
-      default: 30.5
+
+
+    currentTokens: {
+      type: Number
     },
-    amountNeeded: {
-      type: Number,
-      default: 1000000
-    },
-  },
-  data () {
-    return {
-      amountCurrent: this.amountNeeded * (this.goalPercentage / 100),
-      patientsCurrent: Math.round(this.patientsTotal * (this.goalPercentage / 100))
+    maxTokens: {
+      type: Number
     }
   }
 }

@@ -1,22 +1,30 @@
 export const HeaderContainer = (component) => {
   return {
-    data() {
-      return {
-        progressDonation: 0,
-        progressChildren: 0,
-        goalDonation: 0,
-        goalChildren: 0
-      }
-    },
-    async beforeMount() {
+    computed: {
+      progressDonation() {
+        return this.$store.state.general.donations
+      },
+      progressPercent() {
+        return this.$store.state.general.percentage
+      },
 
+      goalDonation() {
+        return this.$store.state.general.goal
+      },
+      progressChildren() {
+        return this.$store.state.general.currentChildren
+      },
+      goalChildren() {
+        return this.$store.state.general.goalChildren
+      },
     },
     render(h) {
       const props = {
         progressDonation: this.progressDonation,
-        progressChildren: this.progressChildren,
+        progressPercent: this.progressPercent,
         goalDonation: this.goalDonation,
-        goalChildren: this.goalChildren
+        progressChildren: this.progressChildren,
+        goalChildren: this.goalChildren,
       }
 
       return h(component, { props })
