@@ -8,7 +8,7 @@
         <p class='goal-bar__progress-item'>
           <small>Se han donado</small>
           <br/>
-          ${{progressDonation.toLocaleString()}}
+          ${{Math.floor(progressDonation).toLocaleString()}}
         </p>
         <p class='goal-bar__progress-item'>
           <small>Con este monto ayudamos a</small>
@@ -21,7 +21,7 @@
           <small>Meta:</small>
           <br/>
           <span class='color-accent'>
-            ${{goalDonation.toLocaleString()}}<small>+1</small>
+            ${{Math.floor(goalDonation).toLocaleString()}}
           </span>
         </p>
         <p class='goal-bar__goal-item'>

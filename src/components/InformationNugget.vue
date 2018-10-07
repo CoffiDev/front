@@ -1,8 +1,8 @@
 <template>
   <div class="informationNugget" style="display: flex; flex-direction: column; align-items: center; padding-bottom: 30px">
-    <div v-for="line in lines" :class="line.type || 'text'">
+    <span v-for="line in lines" :class="line.type || 'text'">
         {{line.text}}
-    </div>
+    </span>
   </div>
 </template>
 

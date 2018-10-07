@@ -9,15 +9,15 @@
       </option>
     </select>
 
-    <div
+    <h2
       style="padding: 30px 0; display: flex; justify-content: center; font-size: 24px; color: #6a1f75; font-weight: bold"
     >
       {{critName}}
-    </div>
+    </h2>
 
     <information-nugget
       :lines="[
-        { text: benefitChildren.toLocaleString(), type: 'accent' },
+        { text: Math.floor(benefitChildren), type: 'color-accent-2 text-emphasis' },
         { text: 'niños beneficiados', type: 'emphasis' },
         { text: 'con tu donativo' }
       ]"
@@ -25,25 +25,28 @@
 
     <information-nugget
       :lines="[
-        { text: 'Los donativos representan', type: 'emphasis' },
-        { text: donationsRepresentationPercentage + '%', type: 'accent' },
-        { text: 'de los recursos que necesita este centro', type: 'emphasis' }
+        { text: 'Los donativos', type: 'emphasis' },
+        { text: 'representan', type: 'emphasis' },
+        { text: donationsRepresentationPercentage + '%', type: 'color-accent-2 text-emphasis' },
+        { text: 'de los recursos'},
+        { text: 'que necesita este centro'}
       ]"
     />
 
     <information-nugget
       :lines="[
-        { text: 'Su costo por paciente asciende a', type: 'emphasis' },
-        { text: '$' + costPerpatient.toLocaleString(), type: 'accent' }
+        { text: 'Su costo por paciente', type: 'emphasis' },
+        { text: 'asciende a', type: 'emphasis' },
+        { text: '$' + Math.floor(costPerpatient).toLocaleString(), type: 'color-accent-2 text-emphasis' }
       ]"
     />
 
     <information-nugget
       :lines="[
         { text: 'El centro necesita', type: 'emphasis' },
-        { text: '$' + Math.ceil(maxAmountRequired / 1000000) + 'MDP', type: 'accent'},
+        { text: '$' + Math.ceil(maxAmountRequired / 1000000) + ' MDP', type: 'color-accent-2 text-emphasis'},
         { text: 'para atender hasta' },
-        { text: maxAmountPatients, type: 'accent' },
+        { text: Math.floor(benefitChildren), type: 'color-accent-2 text-emphasis' },
         { text: 'niños y niñas' },
       ]"
     />

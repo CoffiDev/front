@@ -54,6 +54,10 @@ section
 
 .color-accent
   color: v(color-accent)
+
+.color-accent-2
+  color: v(color-accent-2)
+
 .color-primary
   color: v(color-primary)
 
@@ -138,7 +142,7 @@ section
     fill: v(color-accent-2)
     // fill: v(color-primary)
     top: 0px
-    $delay: calc(var(--patient-index) * .04s + 1.5s) 
+    $delay: calc(var(--patient-index) * .04s + .8s) 
     +animator(fade-color, (delay: $delay, duration: .5s))
       0%
         fill: v(color-accent-2)

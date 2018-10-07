@@ -29,7 +29,7 @@
         </span>
 
         <div class="bold">
-          ayúdanos a juntar otros ${{requiredDonation.toLocaleString()}}
+          ayúdanos a juntar otros ${{Math.floor(requiredDonation).toLocaleString()}}
         </div>
       </div>
     </header>
