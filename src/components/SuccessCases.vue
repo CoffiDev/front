@@ -81,6 +81,8 @@ export default {
   .child
     min-width: 150px
     min-height: 150px
+    max-width: 300px
+    max-height: 300px
     height: auto
     width: auto
 </style>
