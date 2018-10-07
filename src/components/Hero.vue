@@ -2,6 +2,9 @@
   <section class='hero' :class="'hero--' + ailmentName" :style="{'background-image': 'url(' + require('../assets/header-' + (Math.round(Math.random() * 4) + 1) + '.jpg') + ')'
 }">
     <div class='container'>
+      <a href='#' class='no-underline bold color-emphasis social-link'>
+        #yoYaDoné
+      </a>
       <div class='hero__info'>
         <span class='hero__line hero__line-1'>
           Con tu donativo
