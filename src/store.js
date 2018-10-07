@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-import { getGeneral, getRandomIlment, getRandomCRIT, getCritInfo } from '@/lib/requests'
+import { getGeneral, getRandomIlment, getRandomCRIT, getCritInfo, getDonations } from '@/lib/requests'
 
 export default new Vuex.Store({
   state: {
@@ -25,16 +25,6 @@ export default new Vuex.Store({
       requiredDonation: 0
     },
     critsInfo: [],
-    /*
-    {
-      name: '',
-      benefitChildren: 0,
-      donationsRepresentationPercentage: 0,
-      costPerpatient: 0,
-      maxAmountRequired: 0,
-      maxAmountPatients: 0,
-    },
-    */
     general: {
       percentage: 0,
       donations: 0,
@@ -42,7 +32,8 @@ export default new Vuex.Store({
       currentChildren: 100,
       goalChildren: 200
     },
-    selectedCRIT: null
+    selectedCRIT: null,
+    donations: []
   },
   getters: {
     selectedCRITInfo: (state) => {
@@ -51,11 +42,12 @@ export default new Vuex.Store({
     }
   },
   mutations: {
-    setAppState(state, { ilment, general, crit, critsInfo }) {
+    setAppState(state, { ilment, general, crit, critsInfo, donations }) {
       state.ilment = ilment
       state.general = general
       state.crit = crit
       state.critsInfo = critsInfo
+      state.donations = donations
     },
     setGeneral(state, { general }) {
       state.general = general
@@ -65,8 +57,12 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    async getDonations(state) {
+      const donations = await getDonations()
+      state.donations = donations
+    },
+
     async getAppState({ commit }) {
-      console.log('kheee')
 
       const general = await getGeneral()
       const crit = await getRandomCRIT()
@@ -74,9 +70,9 @@ export default new Vuex.Store({
 
       const critsInfo = await getCritInfo()
 
-      console.log('crit info', critsInfo)
+      const donations = await getDonations()
 
-      commit('setAppState', { ilment, general, crit, critsInfo })
+      commit('setAppState', { ilment, general, crit, critsInfo, donations })
     }
   }
 })

@@ -12,7 +12,8 @@ export const CritInfoContainer = (component) => {
     },
     methods: {
       handleSelectCRIT(selected) {
-        this.$store.commit('selectCRIT', selected)
+        console.log(selected.target.value)
+        this.$store.commit('selectCRIT', selected.target.value)
       }
     },
     render(h) {
