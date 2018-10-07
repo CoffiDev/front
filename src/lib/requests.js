@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const HttpService = axios.create({
-  baseURL: 'http://localhost:3000/api'
+  baseURL: 'http://ca6dc3bd.ngrok.io/api'
 })
 
 export const getRandomCRIT = async () => {
