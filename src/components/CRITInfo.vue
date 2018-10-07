@@ -1,19 +1,25 @@
 <template>
   <div class="crit-info">
-    <select v-model="selectedCRIT" name="" id="">
-      <option
-        :value="option.name"
-        v-for="option in options"
-      >
-        {{option.name}}
-      </option>
-    </select>
+    <svg class='crit-illustration'>
+      <use :xlink:href="['#icon-center-' + getIllustration()]" />
+    </svg>
+
 
     <h2
       style="padding: 30px 0; display: flex; justify-content: center; font-size: 24px; color: #6a1f75; font-weight: bold"
     >
-      {{critName}}
+      
     </h2>
+    <div class="text-center">
+      <select v-model="selectedCRIT" name="" id="">
+        <option
+          :value="option.name"
+          v-for="option in options"
+        >
+          {{option.name}}
+        </option>
+      </select>
+    </div>  
 
     <information-nugget
       :lines="[
@@ -57,7 +63,7 @@
 import InformationNugget from './InformationNugget'
 
 export default {
-  name: "CRITInfo",
+  name: "CritInfo",
   data () {
     return { selectedCRIT: null }
   },
@@ -96,6 +102,15 @@ export default {
   watch: {
     selectedCRIT(val) {
       this.handleSelectCRIT(val)
+    }
+  },
+  data () {
+    return {
+      getIllustration: () => {
+        const illustrations = ['cat', 'cdmx', 'edo']
+        const illustration = Math.round(Math.random() * 3)
+        return illustrations[illustration]
+      },
     }
   }
 }

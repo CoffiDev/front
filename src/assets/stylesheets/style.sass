@@ -4,7 +4,6 @@
 * 
   box-sizing: border-box
 
-
 body 
   font-family: v(font-text)
   padding: 0
@@ -64,6 +63,9 @@ section
 .container 
   max-width: 968px
   margin: auto
+  &--medium
+    max-width: 600px
+
 
 .logo 
   margin: 0
@@ -126,7 +128,6 @@ section
       display: none
 
 
-
 .patients
   background-color: v(color-accent)
   color: v(color-primary)
@@ -135,6 +136,7 @@ section
 .patients-grid
   max-width: 400px
   margin: 1.5em auto 
+
 .patient 
   display: inline-block
   &--complete 
@@ -160,7 +162,6 @@ section
     height: 40px
     display: inline-block
 
-
 .btn 
   background-color: transparent
   border: none
@@ -182,6 +183,13 @@ section
     left: 50%
     white-space: nowrap
     transform: translateX(-50%)
+
+.crit-illustration 
+  width: 100%
+  max-width: 800px 
+  margin: auto
+  display: block
+  fill: v(color-accent-2)
 
 
 @import 'hero'
