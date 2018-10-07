@@ -1,21 +1,23 @@
 <template>
   <section class="text-center color-primary">
-    <p>
-      <p class='text-emphasis capitalize no-margin'>{{patientName}}</p>
-      así como {{graduatedPatients}} niños con <span class='lowercase'>{{ailmentName}}</span>
-      <br/>
-      <span class='text-emphasis text-emphasis--medium'>
-        han <strong> mejorado su vida </strong> gracias a ti
-      </span>
-    </p>
-    <div class="patient-photo">
-      <img :src="img" :alt='patientName' class="child"/>
+    <div class='container container--medium'>
+      <p>
+        <p class='text-emphasis capitalize no-margin'>{{patientName}}</p>
+        así como {{graduatedPatients}} niños con <span class='lowercase'>{{ailmentName}}</span>
+        <br/>
+        <span class='text-emphasis text-emphasis--medium'>
+          han <strong> mejorado su vida </strong> gracias a ti
+        </span>
+      </p>
+      <div class="patient-photo">
+        <img :src="img" :alt='patientName' class="child"/>
+      </div>
+      <p class='text-read text-read--small'>
+        <small>
+          {{testimony}}
+        </small>
+      </p>
     </div>
-    <p class='text-read text-read--small'>
-      <small>
-        {{testimony}}
-      </small>
-    </p>
   </section>
 </template>
 

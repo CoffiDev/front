@@ -1,5 +1,8 @@
 <template>
   <div class="crit-info">
+    <svg class='crit-illustration'>
+      <use :xlink:href="['#icon-center-' + getIllustration()]" />
+    </svg>
     <h2 class='text-emphasis text-center color-primary'>
       {{critName}}
     </h2>
@@ -73,6 +76,15 @@ export default {
     maxAmountPatients: {
       type: Number,
       default: 2000
+    }
+  },
+  data () {
+    return {
+      getIllustration: () => {
+        const illustrations = ['cat', 'cdmx', 'edo']
+        const illustration = Math.round(Math.random() * 3)
+        return illustrations[illustration]
+      },
     }
   }
 }
