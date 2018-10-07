@@ -8,6 +8,11 @@
   z-index: 2
   font-size: 18px
   font-weight: 100
+  .container 
+    display: flex
+    justify-content: flex-end
+    height: 100%
+    align-items: center
   &__info 
     margin-top: 1.5em
   &__line 
@@ -46,3 +51,15 @@
     margin-top: .6em
     font-size: .8em
     line-height: 1.2
+
+
+
+@media screen and (min-width: 768px)
+  .hero
+    height: 60vw
+    max-height: 60vh
+    font-size: 3vw
+@media screen and (min-width: 1024px)
+  .hero
+    font-size: 2em
+    

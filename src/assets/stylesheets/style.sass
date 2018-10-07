@@ -4,15 +4,22 @@
 * 
   box-sizing: border-box
 
+
 body 
   font-family: v(font-text)
   padding: 0
   margin: 0
   letter-spacing: -0.04em
+  background-color: #311441
 
 section 
   padding: 2.7em
   position: relative
+
+.app 
+  max-width: 1440px
+  margin: auto
+  background-color: #fff
 
 .text-center
   text-align: center
@@ -50,6 +57,9 @@ section
 .color-primary
   color: v(color-primary)
 
+.container 
+  max-width: 968px
+  margin: auto
 
 .logo 
   margin: 0
@@ -62,11 +72,11 @@ section
 .goal-bar 
   margin-top: 0
   position: relative
-  &__progress
-    transition: all 1s ease
+  height: calc(100% + 2px)
+  &__progress 
     background-color: v(color-primary)
-    height: 50px
-    font-size: 14px
+    height: 100%
+    font-size: .9em
     margin-top: -1px
     position: relative
     width: var(--progressPercent)
@@ -97,13 +107,14 @@ section
 
   &__goal 
     position: absolute
-    top: 10px
+    top: 50%
     right: 10px
     text-align: right
     font-weight: bold
-    font-size: 14px
+    font-size: .9em
+    transform: translateY(-50%)
     small
-      font-size: 12px
+      font-size: .9em
   &__goal-item 
     margin: 0
     line-height: 1
@@ -118,7 +129,8 @@ section
   &__header 
 
 .patients-grid
-  margin-top: 1.5em
+  max-width: 400px
+  margin: 1.5em auto 
 .patient 
   display: inline-block
   &--complete 
@@ -169,3 +181,16 @@ section
 
 
 @import 'hero'
+
+@media screen and (min-width: 768px)
+  .site-header
+    height: 80px
+  .logo 
+    left: 20px
+    img 
+      width: 60px
+  .goal-bar
+    font-size: 1.3em
+    &__goal 
+      right: 30px
+
