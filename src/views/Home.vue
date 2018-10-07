@@ -7,6 +7,7 @@
       :goalChildren=100000 />
     <Hero/>
     <Patients/>
+    <SuccessCases/>
   </div>
 </template>
 
@@ -15,7 +16,7 @@ import HelloWorld from '@/components/HelloWorld.vue'
 import Header from '@/components/Header.vue' 
 import Hero from '@/components/Hero.vue' 
 import Patients from '@/components/Patients.vue' 
-
+import SuccessCases from '@/components/SuccessCases.vue' 
 import { PatientsContainer } from '@/containers/PatientsContainer'
 import { HeroContainer } from '@/containers/HeroContainer'
 
@@ -27,6 +28,7 @@ export default {
     HelloWorld, 
     Hero: HeroContainer(Hero),
     Patients: PatientsContainer(Patients),
+    SuccessCases,
   }
 }
 </script>
