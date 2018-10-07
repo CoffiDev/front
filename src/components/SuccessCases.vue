@@ -1,9 +1,8 @@
 <template>
   <section class="text-center color-primary">
     <p>
-      <strong class='text-emphasis'>{{patientName}}</strong>
-      <br/>
-      así como {{graduatedPatients}} niños con {{ailmentName}}
+      <p class='text-emphasis capitalize no-margin'>{{patientName}}</p>
+      así como {{graduatedPatients}} niños con <span class='lowercase'>{{ailmentName}}</span>
       <br/>
       <span class='text-emphasis text-emphasis--medium'>
         han <strong> mejorado su vida </strong> gracias a ti
