@@ -17,7 +17,7 @@
           con otros padecimientos
         </span>
       </div>
-      <button class='btn btn-action'>
+      <button class='btn btn--action'>
         Quiero donar
       </button>
   </section>
