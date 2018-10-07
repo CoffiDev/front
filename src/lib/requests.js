@@ -1,7 +1,9 @@
 import axios from 'axios'
 
+import { API_BASE_URL } from '@/lib/constants'
+
 const HttpService = axios.create({
-  baseURL: 'http://ca6dc3bd.ngrok.io/api'
+  baseURL: API_BASE_URL
 })
 
 export const getRandomCRIT = async () => {
