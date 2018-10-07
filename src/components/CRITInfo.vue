@@ -45,7 +45,7 @@
         { text: 'El centro necesita', type: 'emphasis' },
         { text: '$' + Math.ceil(maxAmountRequired / 1000000) + ' MDP', type: 'color-accent-2 text-emphasis'},
         { text: 'para atender hasta' },
-        { text: Math.floor(benefitChildren), type: 'color-accent-2 text-emphasis' },
+        { text: Math.floor(maxAmountPatients), type: 'color-accent-2 text-emphasis' },
         { text: 'niños y niñas' },
       ]"
     />

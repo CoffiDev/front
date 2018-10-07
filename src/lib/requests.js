@@ -15,6 +15,8 @@ export const getCritInfo = async () => {
     donationsRepresentationPercentage: critInfo.porcentaje,
     costPerpatient: critInfo.costoPaciente,
     maxAmountRequired: critInfo.costoMaxOperaciones,
+
+
     maxAmountPatients: critInfo.pacientesMaximo,
   }))
 }

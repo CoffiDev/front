@@ -21,7 +21,7 @@
 
 
         <div class="col">
-        <span class="last text-right">
+        <span class="last text-right" style="justify-content: flex-end;display: flex;">
           Donaciones
         </span>
         </div>
