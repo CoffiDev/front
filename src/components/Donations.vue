@@ -18,8 +18,10 @@
         </span>
         </div>
 
+
+
         <div class="col">
-        <span>
+        <span class="last text-right">
           Donaciones
         </span>
         </div>
@@ -28,7 +30,7 @@
       <div v-for="donation in donations" class="row lel">
         <div class="col">
         <span>
-          {{donation.amount}}
+          {{donation.amount.toLocaleString()}}
         </span>
         </div>
         <div class="col">
@@ -37,9 +39,9 @@
           <small style='white-space: nowrap'>{{donation.state}}</small>
         </span>
         </div>
-        
-        <div class="col text-right">
-        <span>
+
+        <div class="col">
+        <span class="last text-right">
           {{donation.noOfDonations}}
         </span>
         </div>
@@ -72,8 +74,8 @@
     justify-content: center
 
   .col
-    padding: 0 10px
-    width: 25%
+    padding: 0 0px
+    width: 33.33%
 
   .lel .col
     display: flex
@@ -96,4 +98,7 @@
 
   .cc
     padding: 30px
+
+  .last
+    text-align: right
 </style>
