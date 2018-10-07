@@ -5,14 +5,29 @@ const HttpService = axios.create({
 })
 
 export const getRandomCRIT = async () => {
-  const crit = await HttpService.get('random/crit')
+  const response = await HttpService.get('random/crit')
 
-  console.log(crit)
+  const CRITResponse = response.data
 
   return {
-    centerName: crit.nombre,
-    patientsTotal: crit.pacientes,
-    goalPercentage: crit.montoDestinado,
-    amountNeeded: crit.beneficiados,
+    centerName: CRITResponse.nombre,
+    patientsTotal: CRITResponse.pacientes,
+    goalPercentage: CRITResponse.montoDestinado,
+    amountNeeded: CRITResponse.beneficiados,
+  }
+}
+
+export const getRandomIlment = async () => {
+  const response = await HttpService.get('random/enfermedad')
+
+  const IlmentResponse = response.data
+
+  return {
+    attendedChildren: IlmentResponse.total,
+    ailmentName: IlmentResponse.enfermedad.split(',')[0],
+
+    testimony: IlmentResponse.testimonio,
+    graduated: IlmentResponse.nombreEgresado,
+    achievements: IlmentResponse.logros
   }
 }
