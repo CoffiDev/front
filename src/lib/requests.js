@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import { API_BASE_URL } from '@/lib/constants'
+import { API_BASE_URL, states } from '@/lib/constants'
 
 const HttpService = axios.create({
   baseURL: API_BASE_URL
@@ -66,4 +66,34 @@ export const getGeneral = async () => {
     currentChildren: GeneralResponse.pacientesActuales,
     goalChildren: GeneralResponse.pacientesMaximo
   }
+}
+
+export const getDonations = async () => {
+  const response = await HttpService.post('datos/donativos', {
+    limit: 4,
+    "order": [["fecha", "asc"]]
+  })
+
+  /*
+  created_at: "2018-10-07T09:08:12.517Z"
+  donacionMultiple: null
+  donacionUnitaria: true
+  donativo: 50
+  estado: "17"
+  fecha: "1970-01-01"
+  id: 3106
+  origen: "Banamex"
+  updated_at: "2018-10-07T09:08:12.517Z"
+   */
+
+  return response.data.donativos.map(x => {
+    return {
+      amount: x.donativo,
+      date: x.fecha,
+      type: x.origen,
+      state: parseInt(x.estado)
+        ? states[parseInt(x.estado)]
+        : x.estado
+    }
+  })
 }
