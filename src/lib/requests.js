@@ -29,7 +29,7 @@ export const getRandomIlment = async () => {
   return {
     attendedChildren: parseInt(IlmentResponse.total),
     ailmentName: IlmentResponse.enfermedad.split(',')[0],
-
+    totalGraduated: parseInt(IlmentResponse.total),
     testimony: IlmentResponse.testimonio,
     graduated: IlmentResponse.nombreEgresado,
     achievements: IlmentResponse.logros

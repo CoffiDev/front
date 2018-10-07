@@ -7,9 +7,21 @@
         <span class='hero__line hero__line-2'>
           atenderemos a
         </span>
-        <span class='hero__line hero__line-3'>
-          {{attendedChildren}} niñas
-        </span>
+
+        <div style="display: flex; justify-content: flex-end">
+          <animate-number
+            class="hero__line hero__line-3"
+            v-if="attendedChildren > 0"
+            :from="attendedChildren - (attendedChildren / 1.5)"
+            :to="attendedChildren"
+            duration="3000"
+            easing="easeOutQuad"
+            :formatter="num => num.toFixed(0)"
+          />
+          <span style="padding-left: 10px" class='hero__line hero__line-3'>niñas</span>
+        </div>
+
+
         <span class='hero__line hero__line-4'> 
           y niños
         </span>
