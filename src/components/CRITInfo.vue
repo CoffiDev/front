@@ -26,7 +26,7 @@
       :lines="[
         { text: 'Su costo por paciente', type: 'emphasis' },
         { text: 'asciende a', type: 'emphasis' },
-        { text: '$' + costPerpatient.toLocaleString(), type: 'color-accent-2 text-emphasis' }
+        { text: '$' + Math.floor(costPerpatient).toLocaleString(), type: 'color-accent-2 text-emphasis' }
       ]"
     />
 
