@@ -10,7 +10,7 @@
       </strong>
 
       <div class="patients-grid">
-        <span v-for="(token, index) in maxTokens - currentTokens" class="patient patient--complete" :style="{'--patient-index': index}">
+        <span v-for="(token, index) in currentTokens" class="patient patient--complete" :style="{'--patient-index': index}">
           <svg v-if="index % 2 == 0">
             <use xlink:href='#icon-girl-complete' />
           </svg>
@@ -19,7 +19,7 @@
           </svg>
         </span>
 
-        <span v-for="(token, index) in currentTokens" class='patient patient--pending'>
+        <span v-for="(token, index) in maxTokens - currentTokens" class='patient patient--pending'>
           <svg v-if="index % 2 == 0" viewbox='0 0 38 58'>
             <use xlink:href='#icon-girl' />
           </svg>

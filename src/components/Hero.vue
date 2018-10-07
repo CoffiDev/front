@@ -1,5 +1,5 @@
 <template>
-  <section class='hero' :class="'hero--' + ailmentName" :style="{'background-image': 'url(' + require('../assets/header-' + Math.round(Math.random()*5) + '.jpg') + ')'
+  <section class='hero' :class="'hero--' + ailmentName" :style="{'background-image': 'url(' + require('../assets/header-' + (Math.round(Math.random() * 4) + 1) + '.jpg') + ')'
 }">
       <div class='hero__info'>
         <span class='hero__line hero__line-1'>
@@ -41,8 +41,6 @@
 </template>
 
 <script>
-
-
 export default {
   name: 'Hero',
   props: {
