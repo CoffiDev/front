@@ -14,7 +14,9 @@ export const getRandomCRIT = async () => {
     patientsCurrent: CRITResponse.beneficiados,
 
     patientsTotal: CRITResponse.pacientes,
-    goalPercentage: CRITResponse.montoDestinado,
+
+    currentPercentage: CRITResponse.porcentajeBeneficiados,
+    givenAmount: CRITResponse.montoDestinado,
     amountNeeded: CRITResponse.beneficiados,
   }
 }

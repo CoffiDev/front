@@ -9,7 +9,7 @@ export default new Vuex.Store({
   state: {
     ilment: {
       attendedChildren: 0,
-      ailmentName: 0,
+      ailmentName: '',
       testimony: '',
       graduated: '',
       achievements: ''
@@ -17,9 +17,9 @@ export default new Vuex.Store({
     crit: {
       centerName: '',
       patientsCurrent: 0,
-
+      currentPercentage: 0,
       patientsTotal: 0,
-      goalPercentage: 0,
+      givenAmount: 0,
       amountNeeded: 0,
     },
     general: {
