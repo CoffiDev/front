@@ -11,11 +11,12 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
 import Header from '@/components/Header.vue' 
 import Hero from '@/components/Hero.vue' 
 import Patients from '@/components/Patients.vue' 
+
+import { PatientsContainer } from '@/containers/PatientsContainer'
 
 export default {
   name: 'home',
@@ -23,7 +24,7 @@ export default {
     Header,
     HelloWorld, 
     Hero,
-    Patients,
+    Patients: PatientsContainer(Patients),
   }
 }
 </script>
