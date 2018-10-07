@@ -3,7 +3,7 @@
     <header class="patients__header">
       El <strong>{{centerName}}</strong>
       <br/>
-      aun necesita atender a {{patientsCurrent}} pacientes más</header>
+      aun necesita atender a {{Math.ceil(patientsCurrent)}} pacientes más</header>
     <div class='patients__grid'>
     </div>
   </section>
@@ -17,6 +17,7 @@ export default {
       type: String,
       default: 'Centro Autismo Teletón'
     },
+    /*
     patientsTotal: {
       type: Number,
       default: 120
@@ -29,11 +30,9 @@ export default {
       type: Number,
       default: 1000000
     },
-  },
-  data () {
-    return {
-      amountCurrent: this.amountNeeded * (this.goalPercentage / 100),
-      patientsCurrent: Math.round(this.patientsTotal * (this.goalPercentage / 100))
+    */
+    patientsCurrent: {
+      type: Number
     }
   }
 }

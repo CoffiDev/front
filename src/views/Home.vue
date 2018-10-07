@@ -18,13 +18,16 @@ import Patients from '@/components/Patients.vue'
 
 import { PatientsContainer } from '@/containers/PatientsContainer'
 import { HeroContainer } from '@/containers/HeroContainer'
-
+import { HeaderContainer } from '@/containers/HeaderContainer'
 
 export default {
   name: 'home',
+  beforeMount() {
+    this.$store.dispatch('getAppState')
+  },
   components: {
-    Header,
-    HelloWorld, 
+    HelloWorld,
+    Header: HeaderContainer(Header),
     Hero: HeroContainer(Hero),
     Patients: PatientsContainer(Patients),
   }

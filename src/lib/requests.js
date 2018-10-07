@@ -11,6 +11,8 @@ export const getRandomCRIT = async () => {
 
   return {
     centerName: CRITResponse.nombre,
+    patientsCurrent: CRITResponse.beneficiados,
+
     patientsTotal: CRITResponse.pacientes,
     goalPercentage: CRITResponse.montoDestinado,
     amountNeeded: CRITResponse.beneficiados,
@@ -23,7 +25,7 @@ export const getRandomIlment = async () => {
   const IlmentResponse = response.data
 
   return {
-    attendedChildren: IlmentResponse.total,
+    attendedChildren: parseInt(IlmentResponse.total),
     ailmentName: IlmentResponse.enfermedad.split(',')[0],
 
     testimony: IlmentResponse.testimonio,

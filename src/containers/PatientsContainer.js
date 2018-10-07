@@ -1,29 +1,13 @@
-import { getRandomCRIT } from '../lib/requests'
-
 export const PatientsContainer = (component) => {
   return {
-    data() {
-      return {
-        centerName: 'Wiw',
-        patientsTotal: 0,
-        goalPercentage: 0,
-        amountNeeded: 0,
-      }
-    },
-    async beforeMount() {
-      const RandomCRIT = await getRandomCRIT()
-
-      this.centerName = RandomCRIT.centerName
-      this.patientsTotal = RandomCRIT.patientsTotal
-      this.goalPercentage = RandomCRIT.goalPercentage
-      this.amountNeeded = RandomCRIT.amountNeeded
+    computed: {
+      centerName() { return this.$store.state.crit.centerName },
+      patientsCurrent() { return this.$store.state.crit.patientsCurrent }
     },
     render(h) {
       const props = {
         centerName: this.centerName,
-        patientsTotal: this.patientsTotal,
-        goalPercentage: this.goalPercentage,
-        amountNeeded: this.amountNeeded
+        patientsCurrent: this.patientsCurrent,
       }
       return h(component, { props })
     }
